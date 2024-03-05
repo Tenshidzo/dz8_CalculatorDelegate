@@ -8,19 +8,19 @@ namespace CalculatorApp
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Простой калькулятор");
+            Console.WriteLine("Calculator");
             Console.WriteLine("===================");
 
             while (true)
             {
-                Console.WriteLine("Выберите операцию:");
-                Console.WriteLine("1. Сложение (+)");
-                Console.WriteLine("2. Вычитание (-)");
-                Console.WriteLine("3. Умножение (*)");
-                Console.WriteLine("4. Деление (/)");
-                Console.WriteLine("5. Выход");
+                Console.WriteLine("Choose operation:");
+                Console.WriteLine("1.Sum (+)");
+                Console.WriteLine("2.Sub (-)");
+                Console.WriteLine("3.Multiplication (*)");
+                Console.WriteLine("4. Division (/)");
+                Console.WriteLine("5. Exit");
 
-                Console.Write("Введите номер операции: ");
+                Console.Write("Enter number of operation: ");
                 string choice = Console.ReadLine();
 
                 if (choice == "5")
@@ -44,33 +44,33 @@ namespace CalculatorApp
                         {
                             if (y == 0)
                             {
-                                Console.WriteLine("Ошибка: Деление на ноль!");
+                                Console.WriteLine("Error: Division by zero!");
                                 return double.NaN;
                             }
                             return x / y;
                         };
                         break;
                     default:
-                        Console.WriteLine("Ошибка: Неправильный ввод!");
+                        Console.WriteLine("Error: Incorrect input!");
                         continue;
                 }
 
-                Console.Write("Введите первое число: ");
+                Console.Write("Enter first number: ");
                 if (!double.TryParse(Console.ReadLine(), out double num1))
                 {
-                    Console.WriteLine("Ошибка: Неправильный формат числа!");
+                    Console.WriteLine("Error: Incorrect format of number!");
                     continue;
                 }
 
-                Console.Write("Введите второе число: ");
+                Console.Write("Enter second number: ");
                 if (!double.TryParse(Console.ReadLine(), out double num2))
                 {
-                    Console.WriteLine("Ошибка: Неправильный формат числа!");
+                    Console.WriteLine("Error: Неправильный формат числа!");
                     continue;
                 }
 
                 double result = operation(num1, num2);
-                Console.WriteLine($"Результат: {result}");
+                Console.WriteLine($"Result: {result}");
             }
         }
     }
